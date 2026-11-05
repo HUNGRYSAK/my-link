@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "정진훈 | 프로필",
-  description: "안녕하세요 ! 바이브 코딩을 배우고 있는 대학생 정진훈의 프로필 페이지입니다.",
+  title: "정진훈 | 개발자 프로필",
+  description: "아이디어를 코드로 실현하고 더 나은 사용자 경험을 고민하는 주니어 개발자 정진훈입니다.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
