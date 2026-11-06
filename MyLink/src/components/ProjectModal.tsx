@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { X, ExternalLink, Github, CheckCircle2, Layers, Cpu, Sparkles } from "lucide-react";
-import { GithubIcon } from "./Icons";
+import { X, ExternalLink, CheckCircle2, Layers, Cpu, Sparkles } from "lucide-react";
+import { GithubIcon, GithubIcon as Github } from "./Icons";
 
 export interface ProjectData {
   id: string;

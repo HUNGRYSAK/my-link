@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
-import { Link } from 'next/link';
+import Link from 'next/link';
 
 // Mock link data – replace with real data source later
 const links = [
