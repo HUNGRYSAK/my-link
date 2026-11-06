@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fffdf0;
+    --foreground: #121212;
+  }
+
+  .dark {
+    --background: #121316;
+    --foreground: #f4f4f5;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* 네오브루탈리즘 도트 그리드 배경 */
+.neo-grid-bg {
+  background-color: #fffdf0;
+  background-image: radial-gradient(#000000 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+.dark .neo-grid-bg {
+  background-color: #121316;
+  background-image: radial-gradient(#52525b 1.2px, transparent 1.2px);
+}
+
+/* 마퀴(롤링 티커) 애니메이션 */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 네오브루탈 그림자 유틸리티 */
+.neo-shadow-sm {
+  box-shadow: 3px 3px 0px 0px #000;
+}
+
+.neo-shadow {
+  box-shadow: 5px 5px 0px 0px #000;
+}
+
+.neo-shadow-lg {
+  box-shadow: 8px 8px 0px 0px #000;
+}
+
+.neo-shadow-xl {
+  box-shadow: 12px 12px 0px 0px #000;
+}
+
+.dark .neo-shadow-sm {
+  box-shadow: 3px 3px 0px 0px #ffffff;
+}
+
+.dark .neo-shadow {
+  box-shadow: 5px 5px 0px 0px #ffffff;
+}
+
+.dark .neo-shadow-lg {
+  box-shadow: 8px 8px 0px 0px #ffffff;
+}
+
+.dark .neo-shadow-xl {
+  box-shadow: 12px 12px 0px 0px #ffffff;
+}
+
+/* 버튼 인터랙션 */
+.neo-btn {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000 !important;
+}
+
+.dark .neo-btn:active {
+  box-shadow: 1px 1px 0px 0px #ffffff !important;
 }
